@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Geheime Website</title>
+  </head>
+  <body>
+    <h2>Login</h2>
+    <input id="pw" type="password" placeholder="Voer wachtwoord in">
+    <button onclick="check()">Inloggen</button>
+    <p id="msg"></p>
+
+    <div id="content" style="display:none; margin-top:20px;">
+      <h1>Welkom!</h1>
+      <p>Dit is de geheime pagina 🎉</p>
+    </div>
+
+    <script>
+      const secret = "DaljaMarket"; // Hier zet je jouw wachtwoord
+
+      function check() {
+        const input = document.getElementById('pw').value;
+        if (input === secret) {
+          document.getElementById('content').style.display = 'block';
+          document.getElementById('msg').textContent = '';
+        } else {
+          document.getElementById('msg').textContent = 'Fout wachtwoord!';
+        }
+      }
+    </script>
+  </body>
+</html>
